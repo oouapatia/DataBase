@@ -1,0 +1,132 @@
+body {
+    background-color: #E0E0E0;
+}
+
+.navigate {
+    margin-top: -8px;
+    margin-left: -7px;
+    height: 97%;
+    width: 14%;
+    background: #293f35;
+    border: 1px solid;
+    float: left;
+}
+
+.title{
+    height: 50px;
+    line-height: 50px;    
+}
+
+.Menu {
+    height: 50px;
+    border-bottom: 1px solid #19aa8d;
+}
+
+.currentMenu{
+    background: rgba(0,0,0,0.3);
+    color: #fff;
+    border-left: 6px solid #19aa8d;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 15px;
+}
+
+.dropButton {
+    height: 100%;
+    width: 100%;
+    background: none;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropMenu {
+    display: none;
+    position: absolute;
+    background-color: #293f35;
+    min-width: 160px;
+}
+
+.dropMenu a {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+}
+
+.dropMenu a:hover {
+    background-color: rgba(0,0,0,0.3);
+}
+
+.currentMenu:hover .dropMenu {
+    display: block;
+}
+
+.currentMenu:hover .dropButton {
+    background-color: #3e8e41;
+}
+
+.operate-title {
+    margin-bottom: 50px;
+    margin-left: 190px;
+    width: 86%;
+    height: 20px;
+    background-color: white;
+    color: black;
+    font-size: 15px;
+    font-family: STXingkai,华文行楷;
+}
+
+.result {
+    margin-top: -44px;
+    margin-left: 190px;
+    width: 86%;
+    height: 585px;
+    background-color: white;
+}
+
+.result_view {
+    margin-top: 1px;
+    margin-left: 190px;
+    width: 86%;
+    height: 610px;
+    background-color: white;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.result_total {
+    margin-top: 1px;
+    margin-left: 190px;
+    width: 86%;
+    height: 610px;
+    background-color: white;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.operate {
+    height: 100%;
+    width: 100%;
+}
+
+.input {
+    margin-top: 3px;
+    margin-left: 3px;
+    height: 20px;
+}
+
+.btn {
+    margin-top: 10px;
+    height: 33px;
+    width: 150px;
+    background: none;
+    color: black;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+

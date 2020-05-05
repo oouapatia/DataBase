@@ -1,0 +1,28 @@
+.top {
+    margin-bottom: 10px;
+}
+
+.top .top_title {
+    font-size: 40px;
+    font-family: STXingkai,华文行楷;
+}
+
+table {
+    border: 1px solid;
+}
+
+td {
+    height: 10px;
+    font-size: 13px;
+}
+
+.td_title {
+    text-align: center;
+    font-size: 13px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
