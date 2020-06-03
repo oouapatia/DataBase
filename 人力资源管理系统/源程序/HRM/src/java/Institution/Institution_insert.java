@@ -54,10 +54,7 @@ public class Institution_insert extends HttpServlet {
         String select_institutionNo = "SELECT institutionNo FROM Institution WHERE institutionNo='" + institutionNo +"'";
         sqlRes = db.Query(select_institutionNo);
         try {
-            while (sqlRes.next()) {
-                juge_exist = false;
-                break;
-            }
+            if (sqlRes.next()) {    juge_exist = false;     }
         } catch (SQLException ex) {
             out.println(ex.toString());
         }

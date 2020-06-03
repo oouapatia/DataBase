@@ -50,13 +50,13 @@ public class Department_update extends HttpServlet {
         sqlRes_manager = db.Query(select_manager);
         
         try {
-            while (sqlRes_departmentNo.next()) {    juge_departmentNo = true;  }
-            while (sqlRes_manager.next()) {    juge_manager = true;   }
+            if (sqlRes_departmentNo.next()) {    juge_departmentNo = true;  }
+            if (sqlRes_manager.next()) {    juge_manager = true;   }
         } catch (SQLException ex) {
-            out.println(ex.toString());
+                out.println(ex.toString());
         }
         
-        if("".equals(managerEmployeeNo))        // 如果管理员工编号为空
+        if("".equals(managerEmployeeNo))        // 如果管理员工编号为空，即不修改管理人员编号
             juge_manager = true;
         
         if (juge_departmentNo == true && juge_manager == true) {
@@ -73,6 +73,7 @@ public class Department_update extends HttpServlet {
             
             db.closeDB(sqlRes_departmentNo);
             db.closeDB(sqlRes_manager);
+            
             boolean juge_update = true;
             for (int i : result) {
                 if (i == 0) {

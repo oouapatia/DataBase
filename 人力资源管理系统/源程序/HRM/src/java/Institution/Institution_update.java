@@ -47,10 +47,7 @@ public class Institution_update extends HttpServlet {
         String select_user = "SELECT institutionNo FROM Institution WHERE institutionNo='" + institutionNo + "'";
         sqlRes = db.Query(select_user);
         try {
-            while (!sqlRes.next()) {
-                juge = false;
-                break;
-            }
+            if (!sqlRes.next()) {   juge = false;   }
         } catch (SQLException ex) {
             out.println(ex.toString());
         }

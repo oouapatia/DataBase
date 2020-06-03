@@ -35,10 +35,7 @@ public class Institution_delete extends HttpServlet {
         String select_institutionNo = "SELECT InstitutionNo FROM Institution WHERE InstitutionNo='" + institutionNo + "'";
         sqlRes = db.Query(select_institutionNo);
         try {
-            while (!sqlRes.next()) {
-                juge = false;
-                break;
-            }
+            if (!sqlRes.next()) {   juge = false;   }
         } catch (SQLException ex) {
            out.println(ex.toString());
         }

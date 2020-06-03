@@ -41,7 +41,7 @@ public class PositionType_query extends HttpServlet {
         String sql_user = "SELECT * FROM PositionType WHERE positionTypeNo='" + positionTypeNo +"'";
         sqlRes = db.Query(sql_user);
         try {
-            while (sqlRes.next()) {
+            if (sqlRes.next()) {
                 juge = true;
                 positionTypeNo_Arr[0] = sqlRes.getString("positionTypeNo").trim();  // 职位类型编号
                 

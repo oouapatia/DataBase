@@ -45,7 +45,7 @@ public class Grade_update extends HttpServlet {
         
         
         try {
-            while (sqlRes_typeNo.next()) {    juge_type = true;   break;  }
+            if (sqlRes_typeNo.next()) {    juge_type = true;  }
         } catch (SQLException ex) {
             out.println(ex.toString());
         }

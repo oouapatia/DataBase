@@ -51,8 +51,8 @@ public class Qualification_update extends HttpServlet {
         sqlRes_institutionNo = db.Query(select_institutionNo);
         
         try {
-            while (sqlRes_quaEmployeeNo.next()) { juge_employeeNo = true; break;  }
-            while (sqlRes_institutionNo.next() || "".equals(institutionNo)) { juge_institutionNo = true; break;  }
+            if (sqlRes_quaEmployeeNo.next()) { juge_employeeNo = true;   }
+            if (sqlRes_institutionNo.next() || "".equals(institutionNo)) { juge_institutionNo = true;   }
         } catch (SQLException ex) {
             out.println(ex.toString());
         }

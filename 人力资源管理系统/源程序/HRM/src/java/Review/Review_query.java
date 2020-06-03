@@ -47,7 +47,7 @@ public class Review_query extends HttpServlet {
         
         sqlRes = db.Query(del_reviewe);
         try {
-            while (sqlRes.next()) {
+            if (sqlRes.next()) {
                 juge = true;
                 revieweeEmployeeNo_Arr[0] = sqlRes.getString("revieweeEmployeeNo").trim();  // 被评价者编号
                 

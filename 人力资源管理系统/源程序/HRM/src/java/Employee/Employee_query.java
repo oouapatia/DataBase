@@ -56,7 +56,7 @@ public class Employee_query extends HttpServlet {
         String sql_user = "SELECT * FROM Employee WHERE employeeNo='" + employeeNo +"'";
         sqlRes = db.Query(sql_user);
         try {
-            while (sqlRes.next()) {
+            if (sqlRes.next()) {
                 juge = true;
                 employeeNo_Arr[0] = sqlRes.getString("employeeNo").trim();          // 员工编号
                 

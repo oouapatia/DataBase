@@ -46,7 +46,7 @@ public class Qualification_query extends HttpServlet {
         String sql_employeeNo = "SELECT * FROM Qualification WHERE employeeNo='" + employeeNo +"'";
         sqlRes = db.Query(sql_employeeNo);
         try {
-            while (sqlRes.next()) {
+            if (sqlRes.next()) {
                 juge = true;
                 qualificationName_Arr[0] = sqlRes.getString("qualificationName").trim();    // 学历名称
                 

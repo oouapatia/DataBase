@@ -47,10 +47,7 @@ public class PositionType_insert extends HttpServlet {
         String select_typeNo = "SELECT positionTypeNo FROM PositionType WHERE positionTypeNo='"+ positionTypeNo +"'";
         sqlRes_typeNo = db.Query(select_typeNo);
         try {
-            while (sqlRes_typeNo.next()) {    
-                juge_typeNo = true;
-                break;  
-            }
+            if (sqlRes_typeNo.next()) {    juge_typeNo = true;  }
         } catch (SQLException ex) {
             out.println(ex.toString());
         }

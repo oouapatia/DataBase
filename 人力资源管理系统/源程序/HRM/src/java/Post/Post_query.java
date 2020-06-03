@@ -49,7 +49,7 @@ public class Post_query extends HttpServlet {
         String sql_postNo = "SELECT * FROM Post WHERE postNo='" + postNo +"'";
         sqlRes = db.Query(sql_postNo);
         try {
-            while (sqlRes.next()) {
+            if (sqlRes.next()) {
                 juge = true;
                 postNo_Arr[0] = sqlRes.getString("postNo").trim();                          // 岗位编号
                 

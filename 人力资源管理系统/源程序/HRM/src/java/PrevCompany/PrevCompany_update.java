@@ -50,9 +50,7 @@ public class PrevCompany_update extends HttpServlet {
         String select_prevCompanyNo = "SELECT prevCompanyNo FROM PrevCompany WHERE prevCompanyNo='" + prevCompanyNo +"'";
         sqlRes = db.Query(select_prevCompanyNo);
         try {
-            if (sqlRes.next()) {
-                juge = true;
-            }
+            if (sqlRes.next()) {    juge = true;    }
         } catch (SQLException ex) {
             out.println(ex.toString());
         }

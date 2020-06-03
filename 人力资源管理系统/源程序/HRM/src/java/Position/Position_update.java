@@ -64,11 +64,11 @@ public class Position_update extends HttpServlet {
         sqlRes_startDate = db.Query(select_startDate);
 
         try {
-            while (!sqlRes_employee.next()) {    juge_employee = false; break;  }
+            if (!sqlRes_employee.next()) {    juge_employee = false;   }
             if(!postNo.equals(""))
-                while (!sqlRes_postNo.next()) {    juge_post = false;   break;  }
+                if (!sqlRes_postNo.next()) {    juge_post = false;  }
             if(!startDate.equals(""))
-                while (!sqlRes_startDate.next()) {   juge_start = false;   break;}
+                if (!sqlRes_startDate.next()) {   juge_start = false; }
         } catch (SQLException ex) {
             out.println(ex.toString());
         }

@@ -52,10 +52,7 @@ public class WorkHistory_update extends HttpServlet {
         boolean juge_user = true;
         sqlRes = db.Query(select_user);
         try {
-            while (!sqlRes.next()) {
-                juge_user = false;
-                break;
-            }
+            if (!sqlRes.next()) {   juge_user = false;  }
         } catch (SQLException ex) {
             out.println(ex.toString());
         }

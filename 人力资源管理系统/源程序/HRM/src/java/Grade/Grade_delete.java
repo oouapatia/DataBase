@@ -31,10 +31,8 @@ public class Grade_delete extends HttpServlet {
         String select_grade = "SELECT positionTypeNo FROM Grade WHERE positionTypeNo='" + positionTypeNo + "'";
         ResultSet sqlRes  = db.Query(select_grade);
         try {
-            while (sqlRes.next()) {
+            if (sqlRes.next())
                 juge = true;
-                break;
-            }
         } catch (SQLException ex) {
            out.println(ex.toString());
         }

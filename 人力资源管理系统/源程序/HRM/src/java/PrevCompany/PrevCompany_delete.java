@@ -35,9 +35,7 @@ public class PrevCompany_delete extends HttpServlet {
         String select_prevCompanyNo = "SELECT prevCompanyNo FROM PrevCompany WHERE prevCompanyNo='" + prevCompanyNo + "'";
         sqlRes = db.Query(select_prevCompanyNo);
         try {
-            if (!sqlRes.next()) {
-                juge = false;   // 未查询到结果，修改为不存在
-            }
+            if (!sqlRes.next()) {   juge = false; }  // 未查询到结果，修改为不存在   
         } catch (SQLException ex) {
            out.println(ex.toString());
         }

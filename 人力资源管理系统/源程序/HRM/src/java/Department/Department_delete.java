@@ -30,9 +30,8 @@ public class Department_delete extends HttpServlet {
         String select_departmentNo = "SELECT departmentNo FROM Department WHERE departmentNo='" + departmentNo + "'";
         ResultSet sqlRes = db.Query(select_departmentNo);
         try {
-            while (sqlRes.next()) {
+            if (sqlRes.next())
                 juge = true;
-            }
         } catch (SQLException ex) {
            out.println(ex.toString());
         }

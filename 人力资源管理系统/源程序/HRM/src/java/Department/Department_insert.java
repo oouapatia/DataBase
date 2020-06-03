@@ -50,8 +50,8 @@ public class Department_insert extends HttpServlet {
         ResultSet sqlRes_manager = db.Query(select_manager);
         
         try {
-            while (sqlRes_departmentNo.next()) { juge_departmentNo = true; }
-            while (sqlRes_manager.next()) { juge_manager = true; }
+            if (sqlRes_departmentNo.next()) { juge_departmentNo = true; }
+            if (sqlRes_manager.next()) { juge_manager = true; }
         } catch (SQLException ex) {
             out.println(ex.toString());
         }

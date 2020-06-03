@@ -38,7 +38,7 @@ public class WorkHistory_query extends HttpServlet {
         String sql_user = "SELECT * FROM WorkHistory WHERE employeeNo='" + employeeNo + "'";
         sqlRes = db.Query(sql_user);
         try {
-            while (sqlRes.next()) {
+            if (sqlRes.next()) {
                 juge = true;
                 prevCompanyNo = sqlRes.getString("prevCompanyNo").trim();                 // 前公司编号
                 request.getServletContext().setAttribute("prevCompanyNo",prevCompanyNo);

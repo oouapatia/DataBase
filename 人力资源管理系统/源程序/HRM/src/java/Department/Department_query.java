@@ -35,7 +35,7 @@ public class Department_query extends HttpServlet {
         PrintWriter out = response.getWriter();
                 
         String departmentNo = request.getParameter("departmentNo");
-        String departmentName,deptLocation,managerEmployeeNo;
+        String deptLocation;
 
         //  查询员工信息
         ResultSet sqlRes;     // 结果集对象
@@ -44,24 +44,18 @@ public class Department_query extends HttpServlet {
         String sql_depart = "SELECT * FROM Department WHERE departmentNo='" + departmentNo +"'";
         sqlRes = db.Query(sql_depart);
         try {
-            while (sqlRes.next()) {
+            if (sqlRes.next()) {
                 juge = true;
-                departmentNo_Arr[0] = sqlRes.getString("departmentNo").trim();      // 部门编号
+                departmentNo_Arr[0] = sqlRes.getString("departmentNo").trim();          // 部门编号
                 
-                if(sqlRes.getString("departmentName") != null)                      // 部门名字
-                    departmentName = sqlRes.getString("departmentName").trim();
-                else    departmentName = "";
-                departmentName_Arr[0] = departmentName;
-
-                if(sqlRes.getString("deptLocation") != null)                        // 部门位置
+                departmentName_Arr[0] = sqlRes.getString("departmentName").trim();      // 部门名字
+                
+                if(sqlRes.getString("deptLocation") != null)                            // 部门位置
                     deptLocation = sqlRes.getString("deptLocation").trim();
                 else    deptLocation = "";
                 deptLocation_Arr[0] = deptLocation;
 
-                if(sqlRes.getString("managerEmployeeNo") != null)                  // 管理人员编号
-                    managerEmployeeNo = sqlRes.getString("managerEmployeeNo").trim();
-                else    managerEmployeeNo = "";
-                managerEmployeeNo_Arr[0] = managerEmployeeNo;
+                managerEmployeeNo_Arr[0] = sqlRes.getString("managerEmployeeNo").trim(); // 管理人员编号
             }
         } catch (SQLException ex) {
             out.println(ex.toString());

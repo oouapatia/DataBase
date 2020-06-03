@@ -65,10 +65,10 @@ public class Position_insert extends HttpServlet {
         sqlRes_startDate = db.Query(select_startDate);
                 
         try {
-            while (sqlRes_position.next()) {    juge_position = true; break;  }
-            while (sqlRes_employee.next()) {    juge_employee = true; break;  }
-            while (sqlRes_postNo.next())   {    juge_post = true;   break;  }
-            while (sqlRes_startDate.next()) {   juge_start = true;   break;}
+            if (sqlRes_position.next()) {    juge_position = true;   }
+            if (sqlRes_employee.next()) {    juge_employee = true;   }
+            if (sqlRes_postNo.next())   {    juge_post = true;     }
+            if (sqlRes_startDate.next()) {   juge_start = true;   }
         } catch (SQLException ex) {
             out.println(ex.toString());
         }

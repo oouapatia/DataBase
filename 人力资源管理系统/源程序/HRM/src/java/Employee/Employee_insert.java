@@ -78,10 +78,10 @@ public class Employee_insert extends HttpServlet {
         sqlRes_super = db.Query(select_super);
 
         try {
-            while (sqlRes_employee.next())          { juge_employee = true; }
-            while (sqlRes_SecurityNumber.next())    { juge_Security = true; }
-            while (sqlRes_departmentNo.next())      { juge_depart = true;  }
-            while (sqlRes_super.next())             { juge_super = true;   }
+            if (sqlRes_employee.next())          { juge_employee = true; }
+            if (sqlRes_SecurityNumber.next())    { juge_Security = true; }
+            if (sqlRes_departmentNo.next())      { juge_depart = true;  }
+            if (sqlRes_super.next())             { juge_super = true;   }
         } catch (SQLException ex) {
             out.println(ex.toString());
         }

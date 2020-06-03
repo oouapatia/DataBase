@@ -58,8 +58,8 @@ public class Post_insert extends HttpServlet {
         
         
         try {
-            while (sqlRes_postNo.next()) { juge_postNo = true; break;  }
-            while (sqlRes_departmentNo.next()) { juge_departmentNo = true; break;  }
+            if (sqlRes_postNo.next()) { juge_postNo = true;   }
+            if (sqlRes_departmentNo.next()) { juge_departmentNo = true;   }
         } catch (SQLException ex) {
             out.println(ex.toString());
         }

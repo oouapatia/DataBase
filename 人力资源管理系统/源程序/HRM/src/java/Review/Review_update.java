@@ -56,9 +56,9 @@ public class Review_update extends HttpServlet {
         sqlRes_exist = db.Query(select_exist);
         
         try {
-            while (sqlRes_reviewer.next()) {    juge_reviewer = true; break;  }
-            while (sqlRes_reviewee.next()) {    juge_reviewee = true; break;  }
-            while (sqlRes_exist.next()) {    juge_exist = true; break;  }
+            if (sqlRes_reviewer.next()) {    juge_reviewer = true;   }
+            if (sqlRes_reviewee.next()) {    juge_reviewee = true;   }
+            if (sqlRes_exist.next()) {    juge_exist = true;   }
         } catch (SQLException ex) {
             out.println(ex.toString());
         }

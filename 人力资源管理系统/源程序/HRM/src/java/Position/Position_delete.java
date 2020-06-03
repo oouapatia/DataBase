@@ -35,10 +35,7 @@ public class Position_delete extends HttpServlet {
         String select_user = "SELECT employeeNo FROM Position WHERE employeeNo='" + employeeNo + "'";
         sqlRes = db.Query(select_user);
         try {
-            while (!sqlRes.next()) {
-                juge = false;
-                break;
-            }
+            if (!sqlRes.next()) {   juge = false;   }
         } catch (SQLException ex) {
            out.println(ex.toString());
         }

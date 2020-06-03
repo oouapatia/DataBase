@@ -104,7 +104,7 @@ public class GradePost_update extends HttpServlet {
         }
         if(!juge_validFromDate){
             out.println("<script type=\"text/javascript\">");
-            out.println("alert(\"请输入与登记编号对应的的有效开始日期！\");");
+            out.println("alert(\"请输入与等级编号对应的的有效开始日期！\");");
             out.println("document.location.href=\"GradePost/gradePost_update.jsp\";");
             out.println("</script>");
         }

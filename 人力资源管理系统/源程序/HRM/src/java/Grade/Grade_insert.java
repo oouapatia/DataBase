@@ -53,8 +53,8 @@ public class Grade_insert extends HttpServlet {
         ResultSet sqlRes_typeExist = db.Query(select_typeExist);
         
         try {
-            while (sqlRes_typeNo.next()) { juge_typeNo = true; break;  }
-            while (sqlRes_typeExist.next()) { juge_typeExist = true; break;  }
+            if (sqlRes_typeNo.next()) { juge_typeNo = true;  }
+            if (sqlRes_typeExist.next()) { juge_typeExist = true;  }
         } catch (SQLException ex) {
             out.println(ex.toString());
         }

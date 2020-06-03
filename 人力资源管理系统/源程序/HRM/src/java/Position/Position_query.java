@@ -49,7 +49,7 @@ public class Position_query extends HttpServlet {
         String sql_user = "SELECT * FROM Position WHERE employeeNo='" + employeeNo +"'";
         sqlRes = db.Query(sql_user);
         try {
-            while (sqlRes.next()) {
+            if (sqlRes.next()) {
                 juge = true;
                 employeeNo_Arr[0] = sqlRes.getString("employeeNo").trim();      // 员工编号
                 

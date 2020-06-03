@@ -43,7 +43,7 @@ public class GradePost_query extends HttpServlet {
         String sql_user = "SELECT * FROM GradePost WHERE postNo='" + postNo +"'";
         sqlRes = db.Query(sql_user);
         try {
-            while (sqlRes.next()) {
+            if (sqlRes.next()) {
                 juge = true;
                 gradeNo_Arr[0] = sqlRes.getString("gradeNo").trim();                        // 等级编号
                 

@@ -45,7 +45,7 @@ public class Grade_query extends HttpServlet {
         String sql_gradeNo = "SELECT * FROM Grade WHERE positionTypeNo='" + positionTypeNo +"'";
         ResultSet sqlRes = db.Query(sql_gradeNo);
         try {
-            while (sqlRes.next()) {
+            if (sqlRes.next()) {
                 juge = true;
                 gradeNo_Arr[0] = sqlRes.getString("gradeNo").trim();                // 等级编号
                 

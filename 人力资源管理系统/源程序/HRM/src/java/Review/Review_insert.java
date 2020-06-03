@@ -60,9 +60,9 @@ public class Review_insert extends HttpServlet {
         sqlRes_review = db.Query(select_review);
         
         try {
-            while (sqlRes_reviewer.next()) {    juge_reviewer = true; break;  }
-            while (sqlRes_reviewee.next()) {    juge_reviewee = true; break;  }
-            while (sqlRes_review.next())   {    juge_exist = true;   break;  }
+            if (sqlRes_reviewer.next()) {    juge_reviewer = true;   }
+            if (sqlRes_reviewee.next()) {    juge_reviewee = true;   }
+            if (sqlRes_review.next())   {    juge_exist = true;     }
         } catch (SQLException ex) {
             out.println(ex.toString());
         }

@@ -55,10 +55,8 @@ public class Employee_update extends HttpServlet {
         String select_user = "SELECT employeeNo FROM Employee WHERE employeeNo='" + employeeNo + "'";
         sqlRes = db.Query(select_user);
         try {
-            while (!sqlRes.next()) {
+            if (!sqlRes.next())
                 juge = false;
-                break;
-            }
         } catch (SQLException ex) {
             out.println(ex.toString());
         }

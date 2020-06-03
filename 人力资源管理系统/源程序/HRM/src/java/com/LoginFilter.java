@@ -68,12 +68,12 @@ public class LoginFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest)request;
          //以上是强制内型转换，使用request对象和response对象
         
-        String user = (String)req.getSession().getAttribute("nameSession");     
+        String user = (String)req.getSession().getAttribute("nameSession");
         if(user == null){   //判断session中是否含有用户名
             out.println("<script type=\"text/javascript\">");
             out.println("alert(\"未登录！请先登录！\");");
             out.println("document.location.href=\"http://localhost:8080/HRM/Login/Login.jsp\";");
-            out.println("</script>");            
+            out.println("</script>");
         }
         else
             chain.doFilter(request,response);

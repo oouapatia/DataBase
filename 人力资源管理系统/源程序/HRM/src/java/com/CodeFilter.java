@@ -58,7 +58,6 @@ public class CodeFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response,
             FilterChain chain)
             throws IOException, ServletException {
-        System.out.println("start-doFilter");
 	
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");      

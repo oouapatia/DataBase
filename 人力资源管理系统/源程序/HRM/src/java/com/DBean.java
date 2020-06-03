@@ -27,7 +27,7 @@ public class DBean {
             DBean db = new DBean();
             conn = db.getconn();
             sqlState = conn.createStatement();  // 创建sqlState对象
-            sqlRes = sqlState.executeQuery(sql);    
+            sqlRes = sqlState.executeQuery(sql);
         } catch (SQLException e) {
             out.println(e.toString());
         } 

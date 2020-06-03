@@ -40,8 +40,8 @@ public class Review_delete extends HttpServlet {
         String select_reviewee = "SELECT revieweeEmployeeNo FROM Review WHERE revieweeEmployeeNo='" + revieweeEmployeeNo   + "'";
         sqlRes_reviewee = db.Query(select_reviewee);
         try {
-            while (sqlRes_reviewer.next()) {    juge_reviewer = true;   break;  }
-            while (sqlRes_reviewee.next()) {    juge_reviewee = true;   break;  }
+            if (sqlRes_reviewer.next()) {    juge_reviewer = true;   }
+            if (sqlRes_reviewee.next()) {    juge_reviewee = true;   }
         } catch (SQLException ex) {
            out.println(ex.toString());
         }

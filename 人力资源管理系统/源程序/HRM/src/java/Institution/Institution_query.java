@@ -52,7 +52,7 @@ public class Institution_query extends HttpServlet {
         out.println(sql_user);
         sqlRes = db.Query(sql_user);
         try {
-            while (sqlRes.next()) {
+            if (sqlRes.next()) {
                 juge = true;
                 institutionNo_Arr[0] = sqlRes.getString("institutionNo").trim();        // 机构编号
                 

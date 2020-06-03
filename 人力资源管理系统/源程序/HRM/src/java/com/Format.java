@@ -6,10 +6,10 @@
 package com;
 
 public class Format {
-    public String FormatSql(String attribute){
-        if(attribute.equals(""))
+    public String FormatSql(String value){
+        if(value.equals(""))
             return null;
         else
-            return "'"+attribute+"'";
+            return "'"+value+"'";
     }
 }

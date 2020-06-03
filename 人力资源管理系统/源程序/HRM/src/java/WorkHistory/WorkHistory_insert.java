@@ -52,9 +52,7 @@ public class WorkHistory_insert extends HttpServlet {
         String select_prevCompanyNo = "SELECT prevCompanyNo FROM PrevCompany WHERE prevCompanyNo='"+prevCompanyNo+"'";
         super_sqlRes = db.Query(select_prevCompanyNo);
         try {
-           while (super_sqlRes.next()) {
-                juge_prevComp = true;   // 存在
-            }
+           if (super_sqlRes.next()) {   juge_prevComp = true;  } // 存在
         } catch (SQLException ex) {
             out.println(ex.toString());
         }

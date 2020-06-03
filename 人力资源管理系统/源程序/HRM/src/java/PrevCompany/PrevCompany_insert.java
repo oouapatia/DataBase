@@ -56,9 +56,7 @@ public class PrevCompany_insert extends HttpServlet {
         String select_prevCompanyNo = "SELECT prevCompanyNo FROM PrevCompany WHERE prevCompanyNo='" + prevCompanyNo +"'";
         sqlRes = db.Query(select_prevCompanyNo);
         try {
-            if (sqlRes.next()) {
-                juge_exist = true;  // 代表存在
-            }
+            if (sqlRes.next()) {    juge_exist = true;  }   // 代表存在
         } catch (SQLException ex) {
             out.println(ex.toString());
         }

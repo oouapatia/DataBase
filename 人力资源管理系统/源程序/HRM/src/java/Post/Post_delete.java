@@ -31,10 +31,7 @@ public class Post_delete extends HttpServlet {
         String select_post = "SELECT postNo FROM Post WHERE postNo='" + postNo + "'";
         sqlRes = db.Query(select_post);
         try {
-            while (sqlRes.next()) {
-                juge = true;
-                break;
-            }
+            if (sqlRes.next()) {    juge = true;    }
         } catch (SQLException ex) {
            out.println(ex.toString());
         }

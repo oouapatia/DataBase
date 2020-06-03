@@ -31,10 +31,7 @@ public class Qualification_delete extends HttpServlet {
         String select_employeeNo = "SELECT employeeNo FROM Qualification WHERE employeeNo='" + employeeNo + "'";
         sqlRes = db.Query(select_employeeNo);
         try {
-            while (sqlRes.next()) {
-                juge = true;
-                break;
-            }
+            if (sqlRes.next()) {    juge = true;    }
         } catch (SQLException ex) {
            out.println(ex.toString());
         }

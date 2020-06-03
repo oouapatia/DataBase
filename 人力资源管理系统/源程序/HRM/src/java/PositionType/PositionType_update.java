@@ -39,10 +39,7 @@ public class PositionType_update extends HttpServlet {
         String select_positionTypeNo = "SELECT positionTypeNo FROM PositionType WHERE positionTypeNo='"+ positionTypeNo +"'";
         sqlRes_positionTypeNo = db.Query(select_positionTypeNo);
         try {
-            while (sqlRes_positionTypeNo.next()) {    
-                juge_positionTypeNo = true; 
-                break;  
-            }
+            if (sqlRes_positionTypeNo.next()) {     juge_positionTypeNo = true;   }
         } catch (SQLException ex) {
             out.println(ex.toString());
         }

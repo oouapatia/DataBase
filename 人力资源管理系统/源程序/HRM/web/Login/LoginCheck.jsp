@@ -14,7 +14,7 @@
     String sql_user = "SELECT passWord FROM Login WHERE userName='" + username + "'";
     ResultSet sqlRes  = DBean.Query(sql_user);  // 结果集对象
 
-    while(sqlRes.next()){
+    if(sqlRes.next()){
         String sqlPassword = sqlRes.getString("passWord").trim();           // 去掉从数据库中取出来的字符串后的空格
         if (password.equals(sqlPassword)) {
             request.getSession().setAttribute("nameSession", username);     //将用户名存入session中

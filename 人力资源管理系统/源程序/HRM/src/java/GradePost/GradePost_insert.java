@@ -98,12 +98,12 @@ public class GradePost_insert extends HttpServlet {
             if (result != 0) {
                 out.println("<script type=\"text/javascript\">");
                 out.println("alert(\"添加成功！\");");
-                out.println("document.location.href=\"Grade/grade_insert.jsp\";");
+                out.println("document.location.href=\"GradePost/gradePost_insert.jsp\";");
                 out.println("</script>");
             } else {
                 out.println("<script type=\"text/javascript\">");
                 out.println("alert(\"添加失败！\");");
-                out.println("document.location.href=\"Grade/grade_insert.jsp\";");
+                out.println("document.location.href=\"GradePost/gradePost_insert.jsp\";");
                 out.println("</script>");
             }
         }
